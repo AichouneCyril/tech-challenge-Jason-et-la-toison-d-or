@@ -1,9 +1,38 @@
 import React from "react";
 import "./App.css";
-import InputWithIcon from "./components/InputWithIcon";
 import { blueGrey } from "@mui/material/colors";
+import TodoList from "./components/todolist";
+//import { useForm } from "react-hook-form";
 
 const primary = blueGrey[500]; // #607d8b
+
+/*export default function App() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+  console.log(errors);
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input
+        type="text"
+        placeholder="First name"
+        {...register("First name", { required: true, maxLength: 80 })}
+      />
+      <input
+        type="text"
+        placeholder="Last name"
+        {...register("Last name", { required: true, maxLength: 100 })}
+      />
+      <input type="undefined" placeholder="Poste" {...register} />
+
+      <input type="submit" />
+    </form>
+  );
+}*/
 
 function App() {
   return (
@@ -21,9 +50,8 @@ function App() {
         <h2>Ajouter un(e) Argonaute</h2>
 
         <form>
-          <label htmlFor="name">Nom de l'Argonaute</label>
-          <InputWithIcon color={primary} />
-          <button type="submit">Envoyer</button>
+          <label htmlFor="name"></label>
+          <TodoList color={primary} />
         </form>
       </main>
       <footer className="App-footer">
