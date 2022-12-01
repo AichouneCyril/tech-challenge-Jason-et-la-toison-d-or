@@ -3,6 +3,7 @@ import Todo from "./Todo";
 import NewTodoForm from "./NewTodoForm";
 import "./TodoList.css";
 import { v4 as uuid } from "uuid";
+import Grid from "@mui/material/Grid";
 
 function TodoList() {
   const id = uuid();
@@ -52,12 +53,15 @@ function TodoList() {
   ));
 
   return (
-    <div className="TodoList">
-      <ul>{todosList}</ul>
-      <NewTodoForm
-        createTodo={create} // <--- This is the prop that is passed to NewTodoForm
-      />
-    </div>
+    <Grid container spacing={3}>
+      <div className="TodoList">
+        <ul>{todosList}</ul>
+        <NewTodoForm
+          style={{ columnCount: 3 }}
+          createTodo={create} // <--- This is the prop that is passed to NewTodoForm
+        />
+      </div>
+    </Grid>
   );
 }
 

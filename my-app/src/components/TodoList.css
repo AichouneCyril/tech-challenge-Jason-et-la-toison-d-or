@@ -1,14 +1,20 @@
 .TodoList {
-    margin: 4rem auto;
-    padding: 2rem 3rem 3rem;
-    max-width: max-content;
-    background: #282c34;
-    color: #fff;
-  }
+  margin: 4rem auto;
+  padding: 2rem 3rem 3rem;
+  max-width: max-content;
+  background: #282c34;
+  color: #fff;
+  display: grid;
+  justify-items: center;
+}
   
   .TodoList ul {
     margin-top: 2.6rem;
     list-style: none;
+    column-count: 3;
+    column-gap: 1rem;
+    column-rule: solid  #282c34;
+    ;
   }
   
   .TodoList h1 {

@@ -13,7 +13,7 @@
   .NewTodoForm input {
     flex-grow: 1;
     border: none;
-    background: #f7f1f1;
+    background: #ff6666;
     padding: 0 1.5em;
     font-size: initial;
   }
@@ -41,3 +41,8 @@
     height: 3rem;
   }
   
+  ::placeholder {
+    color: #fff;
+    font-style: italic;
+    font-weight: bold
+  }

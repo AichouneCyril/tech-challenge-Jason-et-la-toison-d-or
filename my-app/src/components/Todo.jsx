@@ -28,7 +28,6 @@ function Todo({ todo, remove, update, toggleComplete }) {
   };
 
   const toggleCompleted = (evt) => {
-    evt.preventDefault();
     toggleComplete(evt.target.id);
   };
 
@@ -37,7 +36,12 @@ function Todo({ todo, remove, update, toggleComplete }) {
     result = (
       <div className="Todo">
         <form className="Todo-edit-form" onSubmit={handleUpdate}>
-          <input onChange={handleChange} value={task} type="text" />
+          <input
+            type="text"
+            value={task}
+            OnClick={toggleCompleted}
+            onChange={handleChange}
+          />
           <button>Save</button>
         </form>
       </div>

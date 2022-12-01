@@ -1,15 +1,26 @@
 .Todo {
-    display: flex;
-    margin: 0 -3rem 4px;
-    padding: 1.1rem 3rem;
-    justify-content: space-between;
-    align-items: center;
-    background: #ee6e73;
-  }
+  display: flex;
+  margin: 0px 0rem 13px;
+  padding: 1.1rem 3rem;
+  justify-content: center;
+  background: #ee6e73;
+  align-items: center;
+  border-radius: 5.5rem;
+  border: solid #ee6e73;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+  transition: all 0.3s ease-in-out;
+}
   
   .Todo-task {
     position: relative;
     transition: opacity 0.4s linear;
+    font-size: 1.2rem;
+    letter-spacing: 0.25em;
+    font-weight: bold;
   }
   
   .Todo-task.completed {

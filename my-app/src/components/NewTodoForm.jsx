@@ -36,7 +36,11 @@ function NewTodoForm({ createTodo }) {
         type="text"
         name="task"
         placeholder=" nouveau membre "
-        style={{ width: "auto", height: "5vh", fontSize: "1.5rem" }}
+        style={{
+          width: "auto",
+          height: "5vh",
+          fontSize: "1.5rem",
+        }}
       ></input>
       <button
         type="submit"
@@ -45,14 +49,13 @@ function NewTodoForm({ createTodo }) {
           width: "auto",
           height: "5vh",
           fontSize: "1.5rem",
-          color: "#282c34",
+          color: "#fff",
           padding: "0em 2em 0em 2em",
         }}
       >
         <RowingIcon
           style={{
             fontSize: "2rem",
-            color: "#282c34",
           }}
         />
         <br />
