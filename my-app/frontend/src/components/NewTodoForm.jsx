@@ -2,18 +2,26 @@ import React, { useReducer } from "react";
 import "./newTodoForm.css";
 import RowingIcon from "@mui/icons-material/Rowing";
 import { v4 as uuid } from "uuid";
+import axios from "axios";
 
 function NewTodoForm({ createTodo }) {
   const [userInput, setUserInput] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
     {
       task: "",
+      getTodo: [],
     }
   );
+
   const id = uuid();
 
   const handleChange = (e) => {
     e.preventDefault();
+    axios.post("http://localhost:3000/api/todolist", {
+      id: id,
+      task: userInput.task,
+    });
+
     const name = e.target.name;
     const newValue = e.target.value;
     setUserInput({ [name]: newValue });
@@ -21,6 +29,11 @@ function NewTodoForm({ createTodo }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    axios.post("http://localhost:3000/api/todolist", {
+      id: id,
+      task: userInput.task,
+    });
+
     const newTodo = { id, task: userInput.task, completed: false };
     createTodo(newTodo);
     setUserInput({ task: "" });
@@ -36,6 +49,7 @@ function NewTodoForm({ createTodo }) {
         type="text"
         name="task"
         placeholder=" nouveau membre "
+        maxLength={15}
         style={{
           width: "auto",
           height: "5vh",

@@ -7,8 +7,8 @@ function Todo({ todo, remove, update, toggleComplete }) {
   const [isEditing, setIsEditing] = useState(false);
   const [task, setTask] = useState(todo.task);
 
-  const handleClick = (evt) => {
-    evt.preventDefault();
+  const handleClick = (e) => {
+    e.preventDefault();
     remove(todo.id);
   };
 
@@ -17,18 +17,25 @@ function Todo({ todo, remove, update, toggleComplete }) {
     setIsEditing(!isEditing);
   };
 
-  const handleUpdate = (evt) => {
-    evt.preventDefault();
+  const handleUpdate = (e) => {
+    e.preventDefault();
     update(todo.id, task);
     toggleFrom();
   };
-  const handleChange = (evt) => {
-    evt.preventDefault(); // <--- This is the line that is added
-    setTask(evt.target.value);
+  const handleChange = (e) => {
+    e.preventDefault(); // <--- This is the line that is added
+    setTask(e.target.value);
   };
 
   const toggleCompleted = (evt) => {
+    evt.preventDefault();
     toggleComplete(evt.target.id);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    update(todo.id, task);
+    setIsEditing(false);
   };
 
   let result;
@@ -39,10 +46,12 @@ function Todo({ todo, remove, update, toggleComplete }) {
           <input
             type="text"
             value={task}
-            OnClick={toggleCompleted}
+            name="task"
             onChange={handleChange}
-          />
-          <button>Save</button>
+          ></input>
+          <button type="submit" onClick={handleSubmit}>
+            Save
+          </button>
         </form>
       </div>
     );
